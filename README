@@ -1,0 +1,4 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1933
+
+When loading a html file, this plugin replaces all HTML-coded French characters (like & eacute ;) with the normal representation (é), like so many other scripts: html_umlaute(vimscript#907), html_portuguese(vimscript#924), html_danish (vimscript#1163).  I specifically ripped off html_danish, thank you Sune Vuroela.
+
