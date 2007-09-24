@@ -52,8 +52,8 @@ let s:loaded_html_french_functions = 1
 
 function s:Html2Char()
     " remember cursor position:
-	let s:line = line(".")
-	let s:column = col(".")
+    let s:line = line(".")
+    let s:column = col(".")
     " if more than 'report' substitutions have been done, vim 
     " displays it.
     let s:save_report = &report
@@ -69,7 +69,6 @@ function s:Html2Char()
     %s/&Euml;/Ë/eIg
     %s/&Ecirc;/Ê/eIg
     %s/&Iuml;/Ï/eIg
-    %s/&Icirc;/Î/eIg
     %s/&Ocirc;/Ô/eIg
     %s/&Ucirc;/Û/eIg
     %s/&OELig;/Œ/eIg
@@ -83,12 +82,14 @@ function s:Html2Char()
     %s/&ecirc;/ê/eIg
     %s/&euml;/ë/eIg
     %s/&iuml;/ï/eIg
-    %s/&icirc;/î/eIg
     %s/&ocirc;/ô/eIg
     %s/&ucirc;/û/eIg
     %s/&oelig;/œ/eIg
+    %s/&laquo;/«/eIg
+    %s/&raquo;/»/eIg
 
-	
+
+
 
     let &report=s:save_report
     unlet s:save_report
@@ -98,12 +99,12 @@ function s:Html2Char()
 endfunction
 
 function s:Char2Html()
-	let s:line = line(".")
-	let s:column = col(".")
+    let s:line = line(".")
+    let s:column = col(".")
     let s:save_report = &report
     set report=99999
     " french special characters
-	
+
     %s/À/\&Agrave;/eIg
     %s/Â/\&Acirc;/eIg
     %s/Ä/\&Auml;/eIg
@@ -113,7 +114,6 @@ function s:Char2Html()
     %s/Ê/\&Ecirc;/eIg
     %s/Ë/\&Euml;/eIg
     %s/Ï/\&Iuml;/eIg
-    %s/Î/\&Icirc;/eIg
     %s/Ô/\&Ocirc;/eIg
     %s/Û/\&Ucirc;/eIg
     %s/Œ/\&OElig;/eIg
@@ -127,12 +127,13 @@ function s:Char2Html()
     %s/ê/\&ecirc;/eIg
     %s/ë/\&euml;/eIg
     %s/ï/\&iuml;/eIg
-    %s/î/\&icirc;/eIg
     %s/ô/\&ocirc;/eIg
     %s/û/\&ucirc;/eIg
     %s/œ/\&oelig;/eIg
-	
-	
+    %s/«/\&laquo;/eIg
+    %s/»/\&raquo;/eIg
+
+
 
     let &report=s:save_report
     unlet s:save_report
