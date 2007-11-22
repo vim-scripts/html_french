@@ -1,5 +1,5 @@
 " Vim html_french plugin.
-" Version: 1.0
+" Version: 1.3
 " 
 " Description:
 " When loading a html file, this plugin replaces all
@@ -24,9 +24,6 @@
 "
 " Licence: GPL 
 " 
-" Changelog:
-" v1.0 
-"  - initial release
 
 " do this only once per buffer:
 if exists("b:loaded_html_french")
@@ -60,35 +57,37 @@ function s:Html2Char()
     set report=99999
     "french special characters
 
-    %s/&Agrave;/À/eIg
     %s/&Acirc;/Â/eIg
+    %s/&Agrave;/À/eIg
     %s/&Auml;/Ä/eIg
     %s/&Ccedil;/Ç/eIg
     %s/&Eacute;/É/eIg
+    %s/&Ecirc;/Ê/eIg
     %s/&Egrave;/È/eIg
     %s/&Euml;/Ë/eIg
-    %s/&Ecirc;/Ê/eIg
+    %s/&Icirc;/Î/eIg
     %s/&Iuml;/Ï/eIg
     %s/&Ocirc;/Ô/eIg
     %s/&Ucirc;/Û/eIg
+    %s/&Ugrave;/Ù/eIg
     %s/&OELig;/Œ/eIg
 
-    %s/&agrave;/à/eIg
     %s/&acirc;/â/eIg
+    %s/&agrave;/à/eIg
     %s/&auml;/ä/eIg
     %s/&ccedil;/ç/eIg
     %s/&eacute;/é/eIg
-    %s/&egrave;/è/eIg
     %s/&ecirc;/ê/eIg
+    %s/&egrave;/è/eIg
     %s/&euml;/ë/eIg
+    %s/&icirc;/î/eIg
     %s/&iuml;/ï/eIg
     %s/&ocirc;/ô/eIg
     %s/&ucirc;/û/eIg
+    %s/&ugrave;/ù/eIg
     %s/&oelig;/œ/eIg
     %s/&laquo;/«/eIg
     %s/&raquo;/»/eIg
-
-
 
 
     let &report=s:save_report
@@ -105,34 +104,37 @@ function s:Char2Html()
     set report=99999
     " french special characters
 
-    %s/À/\&Agrave;/eIg
     %s/Â/\&Acirc;/eIg
+    %s/À/\&Agrave;/eIg
     %s/Ä/\&Auml;/eIg
     %s/Ç/\&Ccedil;/eIg
     %s/É/\&Eacute;/eIg
-    %s/È/\&Egrave;/eIg
     %s/Ê/\&Ecirc;/eIg
+    %s/È/\&Egrave;/eIg
     %s/Ë/\&Euml;/eIg
+    %s/Î/\&Icirc;/eIg
     %s/Ï/\&Iuml;/eIg
     %s/Ô/\&Ocirc;/eIg
     %s/Û/\&Ucirc;/eIg
+    %s/Ù/\&Ugrave;/eIg
     %s/Œ/\&OElig;/eIg
 
-    %s/à/\&agrave;/eIg
     %s/â/\&acirc;/eIg
+    %s/à/\&agrave;/eIg
     %s/ä/\&auml;/eIg
     %s/ç/\&ccedil;/eIg
     %s/é/\&eacute;/eIg
-    %s/è/\&egrave;/eIg
     %s/ê/\&ecirc;/eIg
+    %s/è/\&egrave;/eIg
     %s/ë/\&euml;/eIg
+    %s/î/\&icirc;/eIg
     %s/ï/\&iuml;/eIg
     %s/ô/\&ocirc;/eIg
     %s/û/\&ucirc;/eIg
+    %s/ù/\&ugrave;/eIg
     %s/œ/\&oelig;/eIg
     %s/«/\&laquo;/eIg
     %s/»/\&raquo;/eIg
-
 
 
     let &report=s:save_report
